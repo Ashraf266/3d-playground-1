@@ -9,22 +9,23 @@ public class PlayerMovement : MonoBehaviour
     // use FixedUpdate for physics-based movement
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            // Time.deltaTime is the interval in seconds from the last frame to the current one
-            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
-        }
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        // if (Input.GetKey(KeyCode.W))
+        // {
+        //     // Time.deltaTime is the interval in seconds from the last frame to the current one
+        //     rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        // }
+        // if (Input.GetKey(KeyCode.S))
+        // {
+        //     rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
+        // }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
