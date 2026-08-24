@@ -6,6 +6,13 @@ public class GameManager : MonoBehaviour
 
     bool gameHasEnded = false;
     public float restartDelay = 2f;
+
+    public GameObject levelCompleteUI;
+
+    public void CompeleteLevel()
+    {
+        levelCompleteUI.SetActive(true);
+    }
     public void EndGame()
     {
         if (!gameHasEnded)
